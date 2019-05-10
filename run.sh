@@ -1,2 +1,2 @@
 ## nohup java -jar eureka.jar --server.port=30000 &
-nohup java -jar -Xms64m -Xmx64m -Xmn64m -XX:SurvivorRatio=6 -XX:MaxMetaspaceSize=64m -XX:MetaspaceSize=64m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:ConcGCThreads=1 -Dapp.name=eureka -Dapp.group=test -Dserver.tomcat.accesslog.directory=/home/admin/eureka/logs -XX:CMSInitiatingOccupancyFraction=70 eureka.jar --server.port=30000 &
+nohup java -jar -XX:MetaspaceSize=32m -XX:MaxMetaspaceSize=64m -Xms16m -Xmx32m -Xmn8m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError -Dapp.name=eureka -Dserver.tomcat.accesslog.directory=/home/admin/eureka/logs eureka.jar --server.port=30000 &
